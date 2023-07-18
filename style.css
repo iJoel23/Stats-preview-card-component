@@ -1,0 +1,154 @@
+/*
+  1. Reset:
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+:root {
+  /* Colors */
+  --c-very-dark-blue: hsl(233, 47%, 7%);
+  --c-dark-desaturated-blue: hsl(244, 38%, 16%);
+  --c-soft-violet: hsl(277, 64%, 61%);
+  --c-white: hsl(0, 0%, 100%);
+  --c-slightly-transparent-white-1: hsla(0, 0%, 100%, 0.75);
+  --c-slightly-transparent-white-2: hsla(0, 0%, 100%, 0.6);
+
+  /* Fonts */
+  --ff-primary: "Inter", sans-serif;
+  --ff-secondary: "Lexend Deca", sans-serif;
+  --fs: 15px;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+/* 2. Styles: */
+body {
+  height: 150vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background-color: var(--c-very-dark-blue);
+}
+h1,
+h2 {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-bold);
+  color: var(--c-white);
+}
+p,
+.attribution {
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs);
+  color: var(--c-slightly-transparent-white-2);
+  padding: 1em 0;
+}
+.engagement--text {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+span {
+  color: var(--c-soft-violet);
+}
+.stats__container {
+  max-width: 1000px;
+  margin: 1.5em;
+  border-radius: 0.6em;
+  overflow: hidden;
+  background: var(--c-dark-desaturated-blue);
+}
+.header--desktop {
+  display: none;
+}
+.header--mobile {
+  background-image: url(img/image-header-mobile.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 250px;
+}
+.header--desktop {
+  display: none;
+}
+.overlay {
+  background-color: var(--c-soft-violet);
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+}
+.stats--content {
+  padding: 1.5em;
+}
+@media (min-width: 600px) {
+  body {
+    height: 100vh;
+  }
+  .stats__container {
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+  .header--desktop {
+    display: block;
+    background-image: url(img/image-header-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .header--mobile {
+    display: none;
+  }
+  .stats--content {
+    padding: 0 4em;
+    display: grid;
+    place-content: center;
+  }
+  .stats--engagement {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2em;
+  }
+}
